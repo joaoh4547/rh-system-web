@@ -4,6 +4,7 @@ import {useContext} from "react";
 import {AppContext} from "@/components/app-context";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {Menu} from "@/components/menu/menu";
 
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -44,7 +45,7 @@ export function SideBar() {
 
             </DrawerHeader>
             <Divider />
-
+            <Menu />
         </Drawer>
     )
 
