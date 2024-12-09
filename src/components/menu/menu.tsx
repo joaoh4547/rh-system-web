@@ -20,7 +20,7 @@ export const menu: MenuItem[] = [
             {
                 nome: "Usuarios",
                 url: "user",
-                icon: <AccountCircle/>
+                icon: <AccountCircle />
             }
         ]
     }
