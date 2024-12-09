@@ -32,7 +32,7 @@ export function Menu() {
         <Box sx={{width: '100%'}}>
             <List>
                 {menu.map((item) => (
-                    <MenuItemButton item={item} key={item.nome}/>
+                    <MenuItemButton  item={item} key={item.nome}/>
                 ))}
             </List>
         </Box>

@@ -30,14 +30,14 @@ export function MenuItemButton({item, isSubMenu = false}: { item: MenuItem, isSu
 
     if (item.subMenu) {
         return <>
-            <ListItemButton onClick={() => setOpened(!opened)}>
-                <ListItemIcon >
+            <ListItemButton suppressHydrationWarning onClick={() => setOpened(!opened)}>
+                <ListItemIcon suppressHydrationWarning>
                     {item.icon}
                 </ListItemIcon>
                 <ListItemText primary={item.nome}/>
                 {opened ? <ExpandLess/> : <ExpandMore/>}
             </ListItemButton>
-            <Collapse in={opened}>
+            <Collapse in={opened} unmountOnExit suppressHydrationWarning>
                 <List component="div" disablePadding>
                     {item.subMenu.map(subItem => (
                         <MenuItemButton item={subItem} key={`${item.nome}-${subItem.nome}`} isSubMenu/>
@@ -46,7 +46,7 @@ export function MenuItemButton({item, isSubMenu = false}: { item: MenuItem, isSu
             </Collapse>
         </>
     } else {
-        return <ListItemButton selected={isSelected()} onClick={navigate} sx={{
+        return <ListItemButton suppressHydrationWarning selected={isSelected()} onClick={navigate} sx={{
             pl: isSubMenu ? 4 : 0,
             '&.Mui-selected': {
                 backgroundColor: '#8f67ef', // Cor de fundo do item selecionado
@@ -56,7 +56,7 @@ export function MenuItemButton({item, isSubMenu = false}: { item: MenuItem, isSu
                 },
             },
         }}>
-            <ListItemIcon sx={{color: "#fff"}}>
+            <ListItemIcon sx={{color: isSelected() ? '#fff' : undefined}}>
                 {item.icon}
             </ListItemIcon>
             <ListItemText primary={item.nome}/>
