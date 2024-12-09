@@ -5,9 +5,10 @@ import {AppContext} from "@/components/app-context";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {Menu} from "@/components/menu/menu";
+import {useApplication} from "@/hooks/use-application";
 
 
-const DrawerHeader = styled('div')(({ theme }) => ({
+const DrawerHeader = styled('div')(({theme}) => ({
     display: 'flex',
     alignItems: 'center',
 
@@ -18,7 +19,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export function SideBar() {
 
-    const {menuOpen, setMenuOpen} = useContext(AppContext)
+    const {menuOpen, toggleMenu} = useApplication()
     const theme = useTheme();
 
     return (
@@ -35,17 +36,17 @@ export function SideBar() {
             anchor="left"
             open={menuOpen}
         >
-            <DrawerHeader >
+            <DrawerHeader>
                 <Typography variant="subtitle1" noWrap component="div">
                     RH - System
                 </Typography>
-                <IconButton onClick={() => setMenuOpen(!menuOpen)}>
-                    {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                <IconButton onClick={toggleMenu}>
+                    {theme.direction === 'ltr' ? <ChevronLeftIcon/> : <ChevronRightIcon/>}
                 </IconButton>
 
             </DrawerHeader>
-            <Divider />
-            <Menu />
+            <Divider/>
+            <Menu/>
         </Drawer>
     )
 

@@ -2,6 +2,7 @@
 import {ReactNode, useContext} from "react";
 import {Box, BoxProps, styled} from "@mui/material";
 import {AppContext} from "@/components/app-context";
+import {useApplication} from "@/hooks/use-application";
 
 
 
@@ -14,7 +15,6 @@ const AppContainer = styled(Box, {
     variants: [
         {
             style: {
-                // width: `100%`,
                 transition: theme.transitions.create(['margin', 'width'], {
                     easing: theme.transitions.easing.easeOut,
                     duration: theme.transitions.duration.enteringScreen,
@@ -26,7 +26,7 @@ const AppContainer = styled(Box, {
 
 export function AppContent({children}: { children: ReactNode }) {
 
-    const {menuOpen} = useContext(AppContext)
+    const {menuOpen} = useApplication()
 
     return (
         <AppContainer ml={menuOpen ? '250px' : 0}>

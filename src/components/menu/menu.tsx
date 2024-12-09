@@ -3,7 +3,7 @@ import {ReactElement} from "react";
 import {AccountCircle, Lens} from "@mui/icons-material";
 import {Box, List} from "@mui/material";
 import {MenuItemButton} from "@/components/menu/menu-item-button";
-// import
+
 
 export type MenuItem = {
     nome: string;
@@ -20,7 +20,7 @@ export const menu: MenuItem[] = [
             {
                 nome: "Usuarios",
                 url: "user",
-                icon: <AccountCircle />
+                icon: <AccountCircle/>
             }
         ]
     }
@@ -32,7 +32,7 @@ export function Menu() {
         <Box sx={{width: '100%'}}>
             <List>
                 {menu.map((item) => (
-                    <MenuItemButton  item={item} key={item.nome}/>
+                    <MenuItemButton item={item} key={item.nome}/>
                 ))}
             </List>
         </Box>
