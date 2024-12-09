@@ -1,6 +1,6 @@
 'use client'
 import {MenuItem} from "@/components/menu/menu";
-import {useRouter, usePathname} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import {Collapse, List, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import {useState} from "react";
 import {ExpandLess, ExpandMore} from "@mui/icons-material";

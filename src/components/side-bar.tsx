@@ -1,7 +1,5 @@
 'use client'
 import {Divider, Drawer, IconButton, styled, Typography, useTheme} from "@mui/material";
-import {useContext} from "react";
-import {AppContext} from "@/components/app-context";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {Menu} from "@/components/menu/menu";

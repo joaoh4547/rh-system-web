@@ -2,10 +2,9 @@
 
 import {IconButton, styled, Toolbar, Typography} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import React, {useContext} from "react";
-import {AppContext} from "@/components/app-context";
+import React from "react";
 
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
+import MuiAppBar, {AppBarProps as MuiAppBarProps} from '@mui/material/AppBar';
 import {useApplication} from "@/hooks/use-application";
 
 interface AppBarProps extends MuiAppBarProps {
@@ -36,7 +35,7 @@ const AppBar = styled(MuiAppBar, {
 
 export function MainAppBar() {
 
-    const { menuOpen,toggleMenu} = useApplication()
+    const {menuOpen,toggleMenu} = useApplication()
 
 
 
