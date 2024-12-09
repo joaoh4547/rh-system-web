@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar {
+    width: 6px; /* Largura da barra vertical */
+    height: 6px; /* Altura da barra horizontal */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::-webkit-scrollbar-thumb {
+    background: #7857cd; /* Cor da barra de rolagem */
+    border-radius: 4px; /* Bordas arredondadas */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+::-webkit-scrollbar-thumb:hover {
+    background: #8265c3; /* Cor quando o mouse passa sobre */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra */
 }

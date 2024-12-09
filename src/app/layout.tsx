@@ -1,18 +1,18 @@
 import type {Metadata} from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import React from "react";
+import {AppRouterCacheProvider} from "@mui/material-nextjs/v15-appRouter";
+import {Roboto} from "next/font/google";
+import {ThemeProvider} from "@mui/system";
+import {theme} from "@/themes";
 
-const geistSans = localFont({
-    src: "./fonts/GeistVF.woff",
-    variable: "--font-geist-sans",
-    weight: "100 900",
-});
-const geistMono = localFont({
-    src: "./fonts/GeistMonoVF.woff",
-    variable: "--font-geist-mono",
-    weight: "100 900",
-});
+const roboto = Roboto({
+    weight: ['300', '400', '500', '700'],
+    variable: '--font-roboto',
+    display: 'swap',
+    subsets: ['latin'],
+})
+
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -26,10 +26,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-        {children}
+        <body className={`${roboto.variable} antialiased`}>
+        <AppRouterCacheProvider options={{key: 'css',}}>
+            <ThemeProvider theme={theme}>
+                {children}
+            </ThemeProvider>
+        </AppRouterCacheProvider>
         </body>
         </html>
     );
